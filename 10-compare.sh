@@ -21,19 +21,19 @@ fi
 
 if [ $num3 -eq $num4 ]
 then  
-    echo " eq $num3 = $num4 "
+    echo " eq $num3 eq $num4 "
 else
-    echo " $num3 =! $num4 "
+    echo " $num3 ne $num4 "
 fi
 
-if [ $num5 - $num4 ]
+if [ $num5 -ne $num4 ]
 then  
-    echo " eq $num5 != $num4 "
+    echo " eq $num5 eq $num4 "
 else
-    echo " $num4 = $num5 "
+    echo " $num4 ne $num5 "
 fi
 
-if [ ! $num3 -eq $num4S ]
+if [ ! $num3 -eq $num4 ]
 then  
     echo " eq $num1 = $num2  "
 else
