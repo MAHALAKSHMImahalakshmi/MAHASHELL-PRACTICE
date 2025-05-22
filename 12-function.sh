@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if [ USERID -ne 0 ]
+if [ $USERID -ne 0 ]
 then 
     echo "user is not root ,it is $USER, pls change acesss to root user of script $0"
     exit 1
@@ -26,5 +26,5 @@ then
     echo "MYSQL already installed "
 else
     dnf install mysql
-    VALIDATE() $? "MYSQL"
+    VALIDATE $? "MYSQL"
 fi
