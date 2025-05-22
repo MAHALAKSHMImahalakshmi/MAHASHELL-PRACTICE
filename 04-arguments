@@ -1,0 +1,9 @@
+#!/bin/bash
+
+person1=$1
+person2=$2
+
+echo " $person1 : hi  srivaru:"
+echo " $person2: hi $person1  :"
+echo " $person1 : can u pls bless with nijapada darshanam :"
+echo " $person2: sure $person1 , I will bless , be ready for darshanam:"
