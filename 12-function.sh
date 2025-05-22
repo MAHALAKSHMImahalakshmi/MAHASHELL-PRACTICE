@@ -26,5 +26,5 @@ then
     echo "MYSQL already installed "
 else
     dnf install mysql
-    VALIDATE() $? MYSQL
+    VALIDATE() $? "MYSQL"
 fi
