@@ -4,7 +4,7 @@ num1=$1
 num2=$2
 num3=$3
 num4=$4
-num4=$5
+num5=$5
 if [ $num1 -gt $num2 ]
 then  
     echo " gt $num1 > $num2  "
@@ -37,5 +37,5 @@ if [ ! $num3 -eq $num4 ]
 then  
     echo " eq $num1 = $num2  "
 else
-    echo " $num3 =! $num4 "
+    echo " $num3 ne $num4 "
 fi
