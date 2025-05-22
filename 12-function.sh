@@ -20,12 +20,25 @@ VALIDATE(){
      
 }
 
-dnf list installed mysql
-if [ $? -eq 0 ]
-then
-    echo "MYSQL already installed "
-else
-    dnf install mysql
-    VALIDATE $? "MYSQL"
+    dnf list installed mysql
+    if [ $? -eq 0 ]
+    then
+        echo "MYSQL already installed "
+    else
+        dnf install mysql -y
+    
+        VALIDATE $? "MYSQL"
+    fi
+
+
+    dnf list installed python
+    if [ $? -ne 0 ]
+    then 
+        dnf install python -y
+        VALIDATE $? python
+    else
+        echo "python already python"
 fi
-fi
+
+
+
