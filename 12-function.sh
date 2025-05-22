@@ -16,6 +16,7 @@ VALIDATE(){
     else
         echo "$2 not successfull installed "
         exit 1
+    fi
      
 }
 
@@ -26,3 +27,4 @@ then
 else
     dnf install mysql
     VALIDATE() $? MYSQL
+fi
