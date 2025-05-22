@@ -28,3 +28,4 @@ else
     dnf install mysql
     VALIDATE $? "MYSQL"
 fi
+fi
