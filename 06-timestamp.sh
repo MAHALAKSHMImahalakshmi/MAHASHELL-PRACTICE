@@ -1,3 +1,3 @@
 #!/bin/bash
-timestamp=$(dateS)
+timestamp=$(date)
 echo " current time : $timestamp "
