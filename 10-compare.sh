@@ -33,7 +33,7 @@ else
     echo " $num4 = $num5 "
 fi
 
-if [ ! ($num3 -eq $num4) ]
+if [ ! $num3 -eq $num4S ]
 then  
     echo " eq $num1 = $num2  "
 else
