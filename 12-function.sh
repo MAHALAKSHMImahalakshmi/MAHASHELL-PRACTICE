@@ -37,7 +37,8 @@ VALIDATE(){
         dnf install python -y
         VALIDATE $? python
     else
-        echo "python already python"
+        echo "python already installed"
+    fi
 fi
 
 
