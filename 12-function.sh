@@ -8,7 +8,7 @@ then
     exit 1
 else
     echo "user is root user of script :  $0"
-
+fi
 VALIDATE(){
     if [ $1 -eq 0 ]
     then 
@@ -39,7 +39,15 @@ VALIDATE(){
     else
         echo "python already installed"
     fi
+
+
+
+dnf list installed nginx
+if [ $? -ne 0 ]
+then
+    echo "nginx is not installed... going to install it"
+    dnf install nginx -y
+    VALIDATE $? "nginx"
+else
+    echo "nginx is already installed...Nothing to do"
 fi
-
-
-
