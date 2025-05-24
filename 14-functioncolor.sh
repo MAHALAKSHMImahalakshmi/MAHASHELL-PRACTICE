@@ -34,7 +34,7 @@ if [ $? -ne 0 ]
 then 
         echo -e " $G MYSQL is not installed ..... $Y it is installing $N"
         dnf install mysql -y
-        VALIDATE $? "  MYSQL"
+        VALIDATE $? "MYSQL"
 else
-    echo -e "  $G MYSQL is  installed  $Y sucess $B great job $N next"
+    echo -e "  $G MYSQL already installed  $Y sucess $B great job $N next"
 fi
