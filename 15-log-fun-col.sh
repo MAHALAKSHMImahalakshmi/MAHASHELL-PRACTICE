@@ -9,7 +9,7 @@ N="\e[0m"
 USERID=$(id -u)
 LOG_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f 1)
-LoG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
  mkdir -p $LOG_FOLDER
 
@@ -26,7 +26,7 @@ VALIDATE(){
 
     if [ $1 -ne 0 ]
     then
-        echo -e " $2 not successfull installed $R Error pls check $N " &>>$LoG_FILE
+        echo -e " $2 not successfull installed $R Error pls check $N " & >> $LoG_FILE
         exit 1
     else
         echo -e "$2 $G succesfully installed $N" &>>$LoG_FILE
@@ -37,7 +37,7 @@ VALIDATE(){
 dnf list installed mysql
 if [ $? -ne 0 ]
 then 
-        echo -e " $G MYSQL is not installed ..... $Y it is installing $N" &>>$LoG_FILE
+        echo -e " $G MYSQL is not installed ..... $Y it is installing $N" & >> $LoG_FILE
         dnf install mysql -y
         VALIDATE $? "mysql"
 else
