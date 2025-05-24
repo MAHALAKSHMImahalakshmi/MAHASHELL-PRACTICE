@@ -36,5 +36,5 @@ then
         dnf install mysql -y
         VALIDATE $? "  MYSQL"
 else
-    echo -e "  $G MYSQL is not installed  $Y it is installing"
+    echo -e "  $G MYSQL is  installed  $Y sucess $B great job $N next"
 fi
