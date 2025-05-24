@@ -8,7 +8,7 @@ N="\e[0m"
 
 USERID=$(id -u)
 LOG_FOLDER="/var/log/shellscript-logs"
-SCRIPT_NAME=$(echo $0 | cut -d "." f 1)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f 1)
 LoG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LoG_FILE
