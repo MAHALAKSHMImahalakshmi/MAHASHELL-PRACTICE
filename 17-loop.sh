@@ -21,7 +21,7 @@ else
     echo -e "Its is root access $G Proceed $N " | tee -a $LOG_FILE
 fi
 
-PACKAGE=( "mysql" "python" "nginx" )
+PACKAGEs=( "mysql" "python" "nginx" )
 
 VALIDATE(){
 
@@ -37,7 +37,7 @@ VALIDATE(){
 
 
 
-for package in  ${PACKAGE[$@]}
+for package in  ${PACKAGEs[$@]}
 do
         dnf list installed $package &>>$LOG_FILE
         if [ $? -ne 0 ]
