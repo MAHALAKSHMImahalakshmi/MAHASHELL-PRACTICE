@@ -11,7 +11,7 @@ LOG_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." f1)
 LoG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
-
+mkdir -p $LoG_FILE
 
 if [ $USERID -ne 0 ]
 then
