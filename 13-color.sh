@@ -1,8 +1,8 @@
 #!/bin/bash
 echo -e " \e[33m Srivenkata  "
 R="\e[31m"
-w=\e[34m
-N=\e[0m
+w="\e[34m"
+N="\e[0m"
 echo -e "$R Naryana  \e[33m Narashima"
 echo -e "\e[34m Govinda "
 echo "Sarvam $W eshwara $N"
