@@ -71,7 +71,8 @@ then
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ $ZIP_FILE
 
-    if [  ! -f $ZIP_FILE ] # file exit or not
+    if [  -f $ZIP_FILE ] # file exit or not
+
     then
         echo -e "Successfully created Zip file"
 
@@ -82,6 +83,7 @@ then
             done <<< $FILES
 
             echo -e "Log files older than $DAYS from source directory removed ... $G SUCCESS $N"
+
     else
              echo -e "$R ERROR  Zip file failure creation $N"
              exit 1
