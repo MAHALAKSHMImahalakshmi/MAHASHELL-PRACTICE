@@ -21,7 +21,7 @@ mkdir -p $LOG_FOLDER
 
 
 
-if [ USERID -ne 0 ]
+if [ $USER_ID -ne 0 ]
 then
 echo -e "$R ERROR:: Please run this script with root access $N" | tee -a $LOG_FILE
     exit 1 #give other than 0 upto 127
