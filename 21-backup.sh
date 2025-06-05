@@ -52,11 +52,12 @@ fi
 if [ ! -d $SOURCE_DIR ]
 then
     echo -e "$R ERROR : $N SOURCE directory  $SOURCE_DIR does not exist. Please check $N"
-    exit 
+    exit 1
 fi
+
 
 if [ ! -d $DEST_DIR ]
 then
     echo -e "$R ERROR : $N destination directory  $DEST_DIR does not exist. Please check $N"
-    exit 
+    exit 1
 fi
