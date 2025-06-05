@@ -61,3 +61,17 @@ then
     echo -e "$R ERROR : $N destination directory  $DEST_DIR does not exist. Please check $N"
     exit 1
 fi
+
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
+
+if [ ! -z $FILES ] #check variable is empty if nothing files varible to check empy -z if not then !-z
+then
+    echo "Files to zip are: $FILES"
+    TIMESTAMP=$(date +%F-%H-%M-%S)
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+    #find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
+    
+else
+
+    echo -e "No log files found older than 14 days ... $Y SKIPPING $N"
+if
