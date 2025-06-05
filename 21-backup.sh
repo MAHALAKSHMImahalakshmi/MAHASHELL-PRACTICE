@@ -64,7 +64,7 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-if [ ! -z $FILES ] #check variable is empty if nothing files varible to check empy -z if not then !-z
+if [ ! -z "$FILES" ] #check variable is empty if nothing files varible to check empy -z if not then !-z
 then
     echo "Files to zip are: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
