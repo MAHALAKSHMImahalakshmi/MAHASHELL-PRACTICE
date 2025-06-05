@@ -24,16 +24,18 @@ else
     echo "You are running with root access" | tee -a $LOG_FILE
 fi
 
-VALIDATE(){
+
+
+VALIDATE() {
+
     if [ $1 -eq 0 ]
     then
-        echo -e "$2 is ... $G SUCCESS $N" | tee -a $LOG_FILE
+        echo -e " $M $2 is .... $G SUCCESS $N  "  | tee -a $LOG_FILE
     else
-        echo -e "$2 is ... $R FAILURE $N" | tee -a $LOG_FILE
+        echo -e " $M $2 is .... $R FAILURE  $N " | tee -a $LOG_FILE
         exit 1
-    if
+    fi
 }
-
 
 
 echo "Srcript started executed at $(date)"
