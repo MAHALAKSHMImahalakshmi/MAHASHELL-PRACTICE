@@ -27,7 +27,7 @@ echo -e "$R ERROR:: Please run this script with root access $N" | tee -a $LOG_FI
     exit 1 #give other than 0 upto 127
 else
     echo "You are running with root access" | tee -a $LOG_FILE
-if
+fi
 
 VALIDATE(){
     if [ $1 -eq 0 ]
