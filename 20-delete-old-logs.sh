@@ -7,7 +7,7 @@ B="\e[34m"
 N="\e[0m"
 
 LOG_FOLDER="/var/log/shellscript-logs" # inorder to create /var and rm dir need soudo access so check_root function
-SCRIPT_NAME=$(echo $0 | cut -d "." -fl)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 
