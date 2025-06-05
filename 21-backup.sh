@@ -76,7 +76,7 @@ then
     then
         echo -e "Successfully created Zip file"
 
-            while IFS = read -r filepath
+            while IFS= read -r filepath
             do
                 echo "Deleting $filepath " | tee -a $LOG_FILE
                 rm -rf $filepath
