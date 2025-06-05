@@ -47,4 +47,4 @@ echo "deleating $filepath" | tee -a $LOG_FILE
 
 done <<< $FILES_TO_DELETE # from this input file  <<<  [ input sting ]
 
-echo "script executed successfully $(date)"
+echo "script executed successfully $(date) done.."
