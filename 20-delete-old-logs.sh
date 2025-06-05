@@ -14,7 +14,7 @@ LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 # first whant to learn about souce dir where all files are stored 
 SOURCE_DIR=/home/ec2-user/app-logs
 
-
+mkdir -p $LOG_FOLDER
 #check_root
 if [ $USERID -ne 0 ]
 then
@@ -33,7 +33,9 @@ VALIDATE(){
         exit 1
     if
 }
-mkdir -p $LOG_FOLDER
+
+
+
 echo "Srcript started executed at $(date)"
 # find command to find  log file 14 days before one
 FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +14)
