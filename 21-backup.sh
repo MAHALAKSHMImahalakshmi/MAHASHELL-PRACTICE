@@ -71,7 +71,7 @@ then
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     echo "$FILES" | tr ' ' '\n' | zip -@ "$ZIP_FILE"
 
-    if [  -f $ZIP_FILE ] # file exit or not
+    if [ ! -f $ZIP_FILE ] # file exit or not
 
     then
         echo -e "Successfully created Zip file"
