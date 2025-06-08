@@ -71,7 +71,7 @@ then
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     echo "$FILES" | tr ' ' '\n' | zip -@ "$ZIP_FILE"
 
-    if [ -f $ZIP_FILE ] # file exit if true delete  or not so not zip file exit
+    if [ ! -f $ZIP_FILE ] # file exit if true delete  or not so not zip file exit
        #  error because download # sudo dnf install zip -y
     then
         echo -e "Successfully created Zip file"
