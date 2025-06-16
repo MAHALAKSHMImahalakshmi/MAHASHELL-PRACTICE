@@ -114,6 +114,21 @@ sudo chmod +x /usr/bin/backup
 sudo visudo
 echo $PATH
 ```
+
+## 💡 Handling Variables Without Quotes  
+**Mistake**: When using `$FILES`, I failed to enclose it in double quotes. This led to a "too many arguments" error when handling filenames with spaces or special characters.  
+
+**Resolution**:  
+- Enclosed `$FILES` in double quotes to ensure it's treated as a single string:  
+  ```bash
+  if [ ! -z "$FILES" ];
+  ```
+Then improved robustness using tr to replace spaces with newlines:
+
+ ```bash
+echo "$FILES" | tr ' ' '\n' | zip -@ "$ZIP_FILE"
+   ```
+
  # 🛣️ Roadmap to Learning Shell Scripting 🧭
  
  ## 🟢 Phase 1: Basics of Shell Scripting 🐣
