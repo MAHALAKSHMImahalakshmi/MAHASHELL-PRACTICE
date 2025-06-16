@@ -186,12 +186,12 @@ sudo sh <script-name>.sh
 
 # 🌟 My Top Picks 💖
 
-## 15-log-fun-col.sh: Fun with colors and logs! 🌈
+### ✨ 15-log-fun-col.sh: Fun with colors and logs! 🌈
 
-## robhoshop.sh: A real-world automation adventure. 🤖
+### ✨ robhoshop.sh: A real-world automation adventure. 🤖
 
-## srivenkata.sh: My nostalgic first print script. 🎉
+### ✨ srivenkata.sh: My nostalgic first print script. 🎉
 
 # 🤝 Join Me in Learning Shell Scripting 🧑‍🤝‍🧑
-This journey is just the beginning. Explore the scripts, fork the repo, and share your own shell scripting experiments!
+🤩 This journey is just the beginning. Explore the scripts, fork the repo, and share your own shell scripting experiments!
 Let’s grow and learn together. 🚀
