@@ -81,9 +81,7 @@ $!: PID of the last background command.
 
 Sample Usage:
 ```
-bash
-Copy
-Edit
+
 ./09-sv.sh arg1 arg2 arg3  
 ```
 ## 🟠 Phase 3: Advanced Scripting Techniques 🧙‍♂️✨
@@ -136,9 +134,7 @@ Key Concepts: df, du.
 
 This script was my first-ever script, where I printed my first message:
 ```
-bash
-Copy
-Edit
+
 echo "hi svr"
 ```
 
@@ -158,9 +154,7 @@ echo "hi svr"
 # 🛠️ How to Run the Scripts 🚀
 Clone the repository:
 ```
-bash
-Copy
-Edit
+
 git clone https://github.com/MAHALAKSHMImahalakshmi/autoShellRoboshop.git
 cd autoShellRoboshop
 ```
@@ -168,17 +162,13 @@ cd autoShellRoboshop
 Make the script executable (if not already):
 
 ```
-bash
-Copy
-Edit
+
 chmod +x <script-name>.sh
 ```
 
 Run the script:
 ```
-bash
-Copy
-Edit
+
 sudo sh <script-name>.sh
 ```
 
