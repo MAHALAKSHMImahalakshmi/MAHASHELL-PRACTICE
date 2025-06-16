@@ -5,6 +5,115 @@ This repository documents my exciting exploration of shell scripting, from the b
 Each script in this journey represents a step forward, filled with learnings and aha moments! 🌈
 
 
+## 🐞 Firstly, Let's Look at the Mistakes I Encountered and How I Debugged Them , Before Starting the Roadmap Journey
+
+During my shell scripting journey, I faced issues like scripts working manually but failing in crontab due to environment differences—especially with the PATH variable and command locations. 🛑 By analyzing error messages, checking environment variables, and adjusting script placement and permissions, I was able to resolve these problems. 🛠️ After overcoming these challenges, I continued to build my skills, which shaped the roadmap of my learning journey in shell scripting. 🚀
+
+# 🛠️ Backup Script Debugging Journey 🚀
+
+## Scenario
+
+Recently, I developed a script to create backups of files and scheduled it in **crontab**. While the script executed successfully when run manually, it failed with a "command not found" error in **crontab**.  
+You can find the script here: [`21-backup.sh`](MAHASHELL-PRACTICE/21-backup.sh)  
+For log cleanup, see: [`20-delete-old-logs.sh`](MAHASHELL-PRACTICE/20-delete-old-logs.sh)
+
+---
+
+## Debugging Process 🐞
+
+1. **Initial Setup**
+
+   - The script was created and tested:
+     ```bash
+     sudo sh 21-backup.sh ../source-dir ../dest-dir
+     ```
+   - Output:
+     ```
+     You are running with root access
+     Files to zip are: ../source-dir/cat.log ../source-dir/catalogue.log ../source-dir/shipping.log
+     ```
+
+2. **Error in Crontab** ❌
+
+   - Crontab output:
+     ```
+     Jun 5 15:16:01 CROND[16399]: CMDOUT (/bin/sh: line 1: sudo: command not found)
+     ```
+
+3. **Analysis** 🔍
+
+   - **PATH Issue:** Crontab uses a minimal environment. The `echo $PATH` command revealed that `/usr/local/bin` was missing from the crontab PATH:
+     ```
+     CMDOUT (/usr/bin:/bin)
+     ```
+
+4. **Solution** 🛠️
+
+   - Moved the script to `/usr/bin` for better compatibility:
+     ```bash
+     sudo cp [21-backup.sh](http://_vscodecontentref_/0) /usr/bin/backup
+     sudo chmod +x /usr/bin/backup
+     ```
+   - Updated the crontab to run the command:
+     ```
+     * * * * * sudo backup /home/ec2-user/source-dir /home/ec2-user/dest-dir
+     ```
+
+---
+
+## Key Learnings 💡
+
+- **Crontab Environment**
+  - Default `PATH` for crontab is minimal: `/usr/bin:/bin`.
+  - Commands/scripts must be placed in directories accessible within this path.
+
+- **Path Debugging**
+  - Use `echo $PATH` to verify the environment for:
+    - **Normal User:** `/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin`
+    - **Root User:** Same as above.
+    - **Crontab:** Minimal paths `/usr/bin:/bin`.
+
+- **Conversion to Command**
+  - Scripts in `/usr/local/bin` may not work in crontab.
+  - Moving the script to `/usr/bin` ensures compatibility:
+    ```bash
+    sudo cp script.sh /usr/bin/command-name
+    sudo chmod +x /usr/bin/command-name
+    ```
+
+- **Using `visudo` for PATH Modification**
+  - Add `/usr/local/bin` to `secure_path` in `sudo` settings:
+    ```bash
+    sudo visudo
+    ```
+    Add:
+    ```
+    Defaults secure_path = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+    ```
+
+---
+
+## Final Working Crontab 🕒
+
+- Schedule the backup to run daily at 3:00 AM:
+
+---
+
+## Outcome 🎉
+
+- The script successfully creates backups and cleans up old files.
+- Logs are updated dynamically, and the crontab runs seamlessly without errors.
+
+---
+
+## Key Commands Used 🛠️
+
+```bash
+sudo cp [21-backup.sh](http://_vscodecontentref_/1) /usr/bin/backup
+sudo chmod +x /usr/bin/backup
+sudo visudo
+echo $PATH
+```
  # 🛣️ Roadmap to Learning Shell Scripting 🧭
  
  ## 🟢 Phase 1: Basics of Shell Scripting 🐣
